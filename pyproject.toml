@@ -5,9 +5,7 @@ description = "MCP server for web browsing and search"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "mcp[cli]",
-    "fastapi>=0.116.1",
-    "uvicorn>=0.35.0",
+    "fastmcp",
     "gpt-oss",
 ]
 

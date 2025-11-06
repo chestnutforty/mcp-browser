@@ -45,7 +45,6 @@ Do not quote more than 10 words directly from the tool output.
 sources=web
 """.strip(),
     lifespan=app_lifespan,
-    port=8001,
 )
 
 
