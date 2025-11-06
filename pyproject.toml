@@ -1,0 +1,16 @@
+[project]
+name = "mcp-browser"
+version = "0.1.0"
+description = "MCP server for web browsing and search"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp",
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "gpt-oss",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
