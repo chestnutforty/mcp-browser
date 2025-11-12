@@ -86,6 +86,57 @@ Information from the browser tool should be cited using:
 
 The browser server depends on the main `gpt-oss` package for the `SimpleBrowserTool` implementation, which provides the actual browsing functionality with support for multiple backends (YouCom, Exa).
 
+## Testing
+
+### Setup
+
+1. Install test dependencies:
+```bash
+uv pip install -e ".[test]"
+```
+
+2. Configure environment variables by copying `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
+
+3. Add your API keys to `.env`:
+   - `EXA_API_KEY` - Required if using Exa backend (default)
+   - `YDC_API_KEY` - Required if using YouCom backend
+
+### Running Tests
+
+Run all tests:
+```bash
+pytest
+```
+
+Run with verbose output:
+```bash
+pytest -v
+```
+
+Run specific test file:
+```bash
+pytest tests/test_browser_server.py
+```
+
+Run specific test:
+```bash
+pytest tests/test_browser_server.py::test_search_basic -v
+```
+
+### Test Coverage
+
+The test suite covers:
+- **Search functionality**: Basic search, different result counts, empty queries
+- **Link navigation**: Opening URLs directly, navigating search results
+- **Pattern matching**: Finding patterns in pages, handling missing patterns
+- **Session management**: Browser isolation between different client sessions
+- **Backend selection**: Environment-based backend configuration
+
+**Note**: Tests make real API calls and require valid API keys. Test results depend on live API responses and may vary.
+
 ## License
 
 See the main gpt-oss repository for license information.
